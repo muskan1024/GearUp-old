@@ -18,7 +18,7 @@ const Login = () => {
             </div>
             <div className="w-1/2 h-full bg-white flex flex-col p-20 justify-between items-center">
                     {/* <h1 className="text-3xl text-red-600 font-bold"> GearUp</h1> */}
-                    <img src="public\WhatsApp Image 2023-11-11 at 5.23.40 PM.jpeg" height={"170px"} width={"200px"} className="-mt-9 m-6" />
+                    <img src="public\GearUp_logo1-removebg-preview.png" height={"170px"} width={"200px"} className="-mt-9 m-6" />
 
 
                     <div className="w-full flex flex-col max-w-[500px]">
