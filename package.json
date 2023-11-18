@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-animated-text": "^0.1.4",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "react-moving-text": "^0.0.7",
     "react-router-dom": "^6.18.0",
     "react-type": "^0.1.0",
