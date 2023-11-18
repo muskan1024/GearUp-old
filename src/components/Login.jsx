@@ -43,7 +43,7 @@ const Login = () => {
                         <div className="w-full flex items-centre justify-between">
                             <div className="w-full flex items-center">
                                 <input type="checkbox" className="w-4 h-4 mr-2"/>
-                                <p className="text-sm">Remeber me for 30 days</p>
+                                <p className="text-sm">Remember me</p>
                             </div>
 
                             <p className="text-sm font-medium whitespace-nowrap cursor-pointer underline underline-offset-2">Forget Password ?</p>
