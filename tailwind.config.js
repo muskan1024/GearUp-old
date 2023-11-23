@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         russo: ['Russo One', "sans-serif"],
+        rubik: ['Rubik', 'sans-serif']
        },
     },
   },

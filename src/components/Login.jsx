@@ -8,7 +8,7 @@ const colors = {
 
 const Login = () => {
     return(
-        <div className="w-full h-screen flex item-start">
+        <div className="w-full h-screen flex item-start font-russo">
             <div className='relative w-1/2 h-full flex flex-col'>
                 <div className="absolute top-[20%] left-[9%] flex flex-col">
                    {/* <h1 className='text-4x1 text-white font-bold my-4'>Welcome!!</h1> */}
@@ -21,10 +21,10 @@ const Login = () => {
                     <img src="public\GearUp_logo1-removebg-preview.png" height={"170px"} width={"200px"} className="-mt-9 m-6" />
 
 
-                    <div className="w-full flex flex-col max-w-[500px]">
+                    <div className="w-full flex flex-col max-w-[600px]">
                         <div className="w-full flex flex-col mb-2">
                         <h3 className="text-3xl font-semibold mb-2">Login</h3>
-                        <p className="text-base mb-2">Welcom Back! Please enter your details.</p>
+                        <p className="text-base mb-2">Welcome Back! Please enter your details.</p>
                         </div>
 
                         <div className="w-full flex flex-col">
@@ -50,11 +50,11 @@ const Login = () => {
                         </div>
 
                         <div className="w-full flex flex-col my-4">
-                            <button className="w-full text-white my-2 bg-red-600 rounded-md p-4 text-center flex items-center justify-center cursor-pointer">
+                            <button className="w-full text-white my-2 bg-[#F50500] rounded-md p-4 text-center flex items-center justify-center cursor-pointer">
                                 Log in
                             </button>
 
-                            <button className="w-full text-black my-2 font-semibold bg-white border-2 border-black rounded-md p-4 text-center flex items-center justify-center cursor-pointer">
+                            <button className="w-full text-black my-2  bg-white border-2 border-black rounded-md p-4 text-center flex items-center justify-center cursor-pointer">
                                 Register
                             </button>
                         </div>
@@ -63,7 +63,7 @@ const Login = () => {
                             <div className="w-full h-[1px] bg-black"></div>
                                 <p className="text-lg absolute text-black/80 bg-white">or</p>     
                         </div>
-                        <div className="w-full text-black my-2 font-semibold bg-white border-2 border-black/40 rounded-md p-4 text-center flex items-center justify-center cursor-pointer">
+                        <div className="w-full text-black my-2 font- bg-white border-2 border-black/40 rounded-md p-4 text-center flex items-center justify-center cursor-pointer">
                             <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png' className="h-6 mr-2" />
                                 Sign in with Google
                             </div>
