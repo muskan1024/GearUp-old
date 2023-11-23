@@ -8,7 +8,7 @@ function App() {
   return (
     <>
 
-      <div>
+      {/* <div>
         <NavBar />
         <div className="bg-gray-700">
           <img
@@ -17,7 +17,7 @@ function App() {
             className="opacity-60 bg-blend-soft-light w-screen bg-gray-600 "
           />
         </div>
-      </div>
+      </div> */}
       <Landing/>
     </>
   );
