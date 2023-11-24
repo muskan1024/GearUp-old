@@ -13,15 +13,17 @@ function NavBar() {
   return (
     <>
       <div className="text-center grid grid-cols-2 sm:grid-cols-4 p-3 shadow-md gap-2">
+        <Link to="#">
         <img
           className="w-[100px] sm:w-[130px] "
           src="public\GearUp_logo.png"
           alt=""
           srcset=""
         />
+        </Link>
         <Box className="sm:hidden grid grid-cols-3 gap-4 justify-items-center justify-self-end font-russo text-sm text-center" >
           <Box>
-            <Link to="/login">
+            <Link to="/">
               <PersonOutline
                 className="hover:text-[#F50500]"
                 sx={{ fontSize: "30px" }}
@@ -75,7 +77,7 @@ function NavBar() {
           </div>
         <Box className="hidden sm:grid grid-cols-3 gap-8 justify-items-center justify-self-end font-russo text-md text-center" >
           <Box>
-            <Link to="/login">
+            <Link to="/">
               <PersonOutline
                 className="hover:text-[#F50500]"
                 sx={{ fontSize: "35px" }}

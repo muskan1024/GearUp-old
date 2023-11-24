@@ -187,10 +187,9 @@ export default function Signup() {
           </div>
           <div className="w-full flex items-center justify-center font-russo">
           <p className="text-sm font-normal text-black">
-            Don't have account?
+            Already have a account?
             <Link to="/" className="font-semibold underline underline-offset-2 cursor-pointer">
-              {" "}
-              Sign up for free.
+              Login
             </Link>
           </p>
         </div>

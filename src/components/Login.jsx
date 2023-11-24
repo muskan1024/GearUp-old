@@ -57,7 +57,7 @@ const Login = () => {
 
         <div className="w-full flex flex-col max-w-[600px]">
           <div className="w-full flex flex-col mb-2 font-russo">
-            <h3 className="text-3xl font-semibold mb-2">Login</h3>
+            <h3 className="text-3xl mb-2">Login</h3>
             <p className="text-base mb-6">
               Welcome Back! Please enter your details.
             </p>
