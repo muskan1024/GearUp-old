@@ -1,35 +1,32 @@
 import {
   FavoriteBorder,
   PersonOutline,
-  Search,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FiMenu } from 'react-icons/fi'
+import { FiSearch } from 'react-icons/fi'
 
 function NavBar() {
   const[open, setOpen] = useState(true)
   return (
     <>
-      <div className="text-center grid grid-cols-2 md:grid-cols-4 p-3 shadow-md gap-2">
+      <div className="text-center grid grid-cols-2 sm:grid-cols-4 p-3 shadow-md gap-2">
         <img
-          className=""
-          src="public\GearUp_logo1-removebg-preview.png"
+          className="w-[100px] sm:w-[130px] "
+          src="public\GearUp_logo.png"
           alt=""
           srcset=""
-          height={"150px"}
-          width={"150px"}
         />
-        <Box className="md:hidden grid grid-cols-3 gap-4 justify-items-center justify-self-end font-russo text-sm text-center" >
+        <Box className="sm:hidden grid grid-cols-3 gap-4 justify-items-center justify-self-end font-russo text-sm text-center" >
           <Box>
             <Link to="/login">
               <PersonOutline
                 className="hover:text-[#F50500]"
                 sx={{ fontSize: "30px" }}
               />
-              <h2>Sign</h2>
+              {/* <h2>Sign</h2> */}
             </Link>
           </Box>
           <Box>
@@ -37,18 +34,18 @@ function NavBar() {
               className="hover:text-[#F50500]"
               sx={{ fontSize: "30px" }}
             />
-            <h5>Cart</h5>
+            {/* <h5>Cart</h5> */}
           </Box>
           <Box>
             <FavoriteBorder
               className="hover:text-[#F50500]"
               sx={{ fontSize: "30px" }}
             />
-            <h5>Like</h5>
+            {/* <h5>Like</h5> */}
           </Box>
         </Box>
         {/* <FiMenu className="sm:hidden block h-6 w-6  cursor-pointer justify-self-end" onClick={() => setOpen(!open)}/> */}
-        <div className="col-span-2 md:col-span-2">
+        {/* <div className="col-span-2 md:col-span-2">
           <TextField  
             fullWidth 
             id=""
@@ -71,15 +68,19 @@ function NavBar() {
             }}
             variant="filled"
           />
+          </div> */}
+          <div className="flex w-full h-10 bg-gray-100 rounded-full shadow-md shadow-gray-300 col-span-2">
+            <input type="text" placeholder="Search GearUp" className="enabled:outline-none ml-3 bg-transparent w-full" name="" id="" />
+            <p className='bg-[#F50500] p-2 rounded-full text-2xl hover:bg-slate-900 text-white'><FiSearch/></p>
           </div>
-        <Box className="hidden md:grid grid-cols-3 gap-8 justify-items-center justify-self-end font-russo text-md text-center" >
+        <Box className="hidden sm:grid grid-cols-3 gap-8 justify-items-center justify-self-end font-russo text-md text-center" >
           <Box>
             <Link to="/login">
               <PersonOutline
                 className="hover:text-[#F50500]"
                 sx={{ fontSize: "35px" }}
               />
-              <h2>Sign</h2>
+              {/* <h2>Login</h2> */}
             </Link>
           </Box>
           <Box>
@@ -87,27 +88,27 @@ function NavBar() {
               className="hover:text-[#F50500]"
               sx={{ fontSize: "35px" }}
             />
-            <h5>Cart</h5>
+            {/* <h5>Cart</h5> */}
           </Box>
           <Box>
             <FavoriteBorder
               className="hover:text-[#F50500]"
               sx={{ fontSize: "35px" }}
             />
-            <h5>Like</h5>
+            {/* <h5>Like</h5> */}
           </Box>
         </Box>
       </div>
       <div className=" grid-flow-col xl:text-xl lg:text-md lg:grid justify-around p-2 font-russo bg-gray-200 hidden  xl:grid">
         <h1 className="hover:text-[#F50500] hover:underline">Repair Parts</h1>
-        <h1 className="hover:text-[#F50500]">Body Parts</h1>
-        <h1 className="hover:text-[#F50500]">Oils & Fluids</h1>
-        <h1 className="hover:text-[#F50500]">Wheels & Tiers</h1>
-        <h1 className="hover:text-[#F50500]">Lighting</h1>
-        <h1 className="hover:text-[#F50500]">Electronics</h1>
-        <h1 className="hover:text-[#F50500]">Interior</h1>
-        <h1 className="hover:text-[#F50500]">Exterior</h1>
-        <h1 className="hover:text-[#F50500]">Tools & Garage</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Body Parts</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Oils & Fluids</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Wheels & Tiers</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Lighting</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Electronics</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Interior</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Exterior</h1>
+        <h1 className="hover:text-[#F50500] hover:underline">Tools & Garage</h1>
       </div>
     </>
   );

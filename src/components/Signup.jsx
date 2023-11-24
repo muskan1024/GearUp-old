@@ -1,114 +1,201 @@
 import React from "react";
+import axios from "axios";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-function Signup() {
+export default function Signup() {
+  const [errorMessage, setErrorMessage] = useState("");
+  // const [userName, setUserName] = useState('');
+  // const [fullName , setName] = useState('');
+  // const [password , setPassword] = useState('');
+  // const [email , setEmail] = useState('');
+  // const [contactNumber, setContactNumber] = useState('');
+
+  // const router = useNavigate();
+  // const handleSignup = async(e) => {
+  //     e.preventDefault();
+  //     const formData = {
+  //         fullName,
+  //         userName,
+  //         password,
+  //         email,
+  //         contactNumber
+  //     };
+  //     try{
+
+  //         const response = await axios.post('http://localhost:3002/api/v1/users', formData,{
+  //             headers:{
+  //                 'Content-Type' : 'application/json',
+  //             },
+  //         })
+  //         if(response.status === 200){
+  //             router('/login');
+  //             // <Link to="/login"/>
+  //         }
+  //         else{
+  //             console.error('Error Registration', error);
+  //         }
+  //     }
+  //     catch(error){
+  //         console.error('Failed', error);
+  //     }
+  // }
+
+  const history = useNavigate();
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+
+    const userData = {
+      fullName: data.get("fullName"),
+      userName: data.get("userName"),
+      email: data.get("email"),
+      password: data.get("password"),
+      contactNumber: data.get("contactNumber"),
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3002/api/v1/users",
+        userData
+      );
+
+      if (response.status === 200) {
+        history("/");
+        console.log("Registration successful");
+      } else {
+        console.error("Registration failed");
+      }
+    } catch (error) {
+      console.error("An error occurred while registering:", error);
+      // document.getElementById("signup_failed").innerHTML =
+      //   "Email or Password is incorrect!";
+      if (error.response && error.response.data) {
+        setErrorMessage(error.response.data);
+      } else {
+        setErrorMessage("Registration failed. Email or Password is incorrect!");
+      }
+    }
+  };
   return (
-    <div className="w-full h-screen flex item-start">
+    <form onSubmit={handleSignup} noValidate className="w-full h-screen flex item-start">
       <div className="relative w-1/2 h-full flex flex-col">
-        <div className="absolute top-[20%] left-[9%] flex flex-col">
-          {/* <h1 className='text-4x1 text-white font-bold my-4'>Welcome!!</h1> */}
-          {/* <p className='text-x1 text-white font-normal'>To The Perfect Solution for Your Machine</p> */}
-        </div>
         <img
-          src="https://images.unsplash.com/photo-1522598140461-ec9911e01c53?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BhcmUlMjBwYXJ0c3xlbnwwfHwwfHx8MA%3D%3D"
+          src="public\Signup-bg.avif"
           className="w-full h-full object-cover"
         />
       </div>
       <div className="w-1/2 h-full bg-white flex flex-col p-16 justify-between items-center">
-        {/* <h1 className="text-3xl text-red-600 font-bold"> GearUp</h1> */}
         <img
-          src="public\WhatsApp Image 2023-11-11 at 5.23.40 PM.jpeg"
+          src="public\GearUp-gif.gif"
           height={"170px"}
           width={"200px"}
-          className="-mt-9 m-6"
+          className="-mt-16"
         />
 
         <div className="w-full flex flex-col">
-          <div className="w-full flex flex-col mb-2">
-            <h3 className="text-3xl font-semibold mb-2">SignUp</h3>
-            <p className="text-base mb-2">
-              Welcom Back! Please enter your details.
+          <div className="w-full flex flex-col mb-2 font-russo">
+            <h3 className="text-3xl mb-2">Sign Up</h3>
+            <p className="text-base mb-6">
+              Welcome Back! Please enter your details.
             </p>
           </div>
 
           <div className="grid grid-flow-cols grid-cols-2 gap-6">
             <div className="flex flex-col ">
-              <label>First name</label>
+              <label className="font-russo">Full name</label>
               <input
                 type="text"
+                name="fullName"
+                id="fullName"
                 placeholder="Enter your First name"
-                className=" text-black py-3 bg-transparent border-b border-black outline-none focus:outline-none"
+                className="  py-3 bg-transparent border-b border-black outline-none focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col">
-              <label>Last name</label>
+              <label className="font-russo">Username</label>
               <input
                 type="text"
+                name="userName"
                 placeholder="Enter your Last name"
-                className=" text-black py-3 bg-transparent border-b border-black outline-none focus:outline-none"
+                className="py-3 bg-transparent border-b border-black outline-none focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col">
-              <label>Phone number</label>
+              <label className="font-russo">Phone number</label>
               <input
-                type="text"
+                type="number"
+                name="contactNumber"
                 placeholder="Enter your Phone number"
                 className=" text-black py-3 bg-transparent border-b border-black outline-none focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col">
-              <label>Email-Id</label>
+              <label className="font-russo">Email-Id</label>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your Email-ID"
                 className=" text-black py-3 bg-transparent border-b border-black outline-none focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col">
-              <label>Password</label>
+              <label className="font-russo">Password</label>
               <input
                 type="Password"
                 placeholder="Enter your Password"
+                name="password"
                 className=" text-black py-3 bg-transparent border-b border-black outline-none focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col">
-              <label>Confirm password</label>
+              <label className="font-russo">Confirm password</label>
               <input
                 type="Password"
                 placeholder="Confirm your Password"
+                name="password"
+                // value={password}
+                // onChange={(e)=>setPassword(e.target.value)}
                 className=" text-black py-3 bg-transparent border-b border-black outline-none focus:outline-none"
               />
             </div>
           </div>
-
-          <div className="flex justify-center my-4">
-            <button className="w-[50%] text-white my-2 bg-red-600 rounded-md p-4 text-center flex items-center justify-center cursor-pointer">
-              Sign up
+          <span id="signup_failed" className="text-red-700 font-bold">{errorMessage} </span>
+          <div className="flex justify-center font-russo">
+            <button className="w-[50%] text-white my-3 mt-5 bg-[#F50500] rounded-md p-3 text-center flex items-center justify-center cursor-pointer text-lg">
+              Sign Up
             </button>
           </div>
 
-          <div className=" flex items-center justify-center relative py-2">
+          <div className=" flex items-center justify-center relative py-2 font-russo">
             <div className="w-3/4 h-[1px] bg-black"></div>
             <p className="text-lg absolute text-black/80 bg-white">or</p>
           </div>
-          <div className="flex justify-center my-4">
-            <div className="w-[50%] text-black font-semibold bg-white border-2 border-black/40 rounded-md p-4 flex justify-center cursor-pointer">
+          <div className="flex justify-center my-3 font-russo ">
+            <div className="w-[50%] text-black border-2 border-black/40 rounded-md p-2 flex justify-center cursor-pointer items-center">
               <img
                 src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
-                className="h-6 mr-2"
+                className="h-9 mr-2"
               />
-              Sign up with Google
+              Sign Up with Google
             </div>
           </div>
+          <div className="w-full flex items-center justify-center font-russo">
+          <p className="text-sm font-normal text-black">
+            Don't have account?
+            <Link to="/" className="font-semibold underline underline-offset-2 cursor-pointer">
+              {" "}
+              Sign up for free.
+            </Link>
+          </p>
+        </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
-
-export default Signup;
